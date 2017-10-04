@@ -3,7 +3,7 @@
     "sdkVersion": "20.0.0",
     "name": "BoredApp",
     "icon": "https://i.imgur.com/DUGwB1u.png",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "slug": "bored",
     "ios": {
       "bundleIdentifier": "ca.digized.bored"
