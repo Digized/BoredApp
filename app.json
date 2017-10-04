@@ -1,18 +1,25 @@
 {
   "expo": {
-    "sdkVersion": "20.0.0",
     "name": "BoredApp",
-    "icon": "https://i.imgur.com/DUGwB1u.png",
-    "version": "2.0.2",
+    "description": "I got bored so I made this",
     "slug": "bored",
-    "ios": {
-      "bundleIdentifier": "ca.digized.bored"
+    "sdkVersion": "20.0.0",
+    "version": "2.0.2",
+    "primaryColor": "#cccccc",
+    "icon": "https://i.imgur.com/DUGwB1u.png",
+    "loading": {
+      "icon": "./assets/icons/loading-icon.png"
     },
-    "android": {
+    "packagerOpts": {
+      "assetExts": ["ttf", "mp4"]
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android":{
       "package": "ca.digized.bored",
       "permissions": [],
       "versionCode": 2
-            
     }
   }
 }

@@ -14,7 +14,6 @@ export default class App extends React.Component {
 const letters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
 
 class ZButton extends React.Component {
-    anim;
     constructor() {
         super();
 
@@ -24,11 +23,8 @@ class ZButton extends React.Component {
             backgroundColor: '#faf',
             word: words[0],
             textSize: new Animated.Value(100),
-
         };
-        this.anim = Animated.timing(this.state.textSize, {
-            toValue: 150
-        });
+        Animated.delay(0);
     }
     componentWillMount() {
 
@@ -39,24 +35,18 @@ class ZButton extends React.Component {
         });
     }
 
-    componentDidMount() {
-
-    }
-
     increaseNum() {
-        const num = this.state.count + 1;
-        this.state.textSize.setValue(100);
-        this.anim.start();
+        this.animate();
+        let num = this.state.count + 1;
         AsyncStorage.setItem('@BOREDAPP:count', "" + num);
         this.setState({ count: num });
-
-
-        console.log(this);
-
         this.nextColor();
-
     }
 
+    animate(){
+        this.state.textSize.setValue(100);
+        Animated.spring(this.state.textSize, { toValue: 150}).start();        
+    }
     nextColor() {
         const redInt = parseInt(Math.random() * 16);
         const greenInt = parseInt(Math.random() * 16);
@@ -94,7 +84,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        //alignItems: 'center',
         justifyContent: 'center',
     }
 });
